@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1</title>
+  <style>
+    body 
+    {
+      font-family: Arial, sans-serif;
+      background-color: #fde2e4; /* 從 Color Hunt 調色盤取淡粉背景 */
+      color: #6d6875; /* 深粉文字 */
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 
+    {
+      margin-bottom: 20px;
+    }
+
+    .circle-container 
+    {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 50px;
+    }
+
+    .photo, .circle 
+    {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end; /* 文字靠下 */
+      justify-content: center;
+      position: relative;
+      border: 4px solid #b5838d; /* 顏色取自調色盤中深紫 */
+    }
+
+    .photo img 
+    {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .circle 
+    {
+      background-color: #b5838d; /* 深粉紫背景 */
+      color: #fff; /* 白色文字 */
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 15px; /* 文字與底部距離 */
+    }
+  </style>
+</head>
+<body>
+  <h1>Task 1</h1>
+  <p>1. Rounded border<br>
+     2. Change background color and text color (Color Hunt palette)<br>
+     3. Move text closer to the bottom</p>
+
+  <div class="circle-container">
+    <div class="photo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Brad_Pitt_2019_by_Glenn_Francis.jpg" alt="Brad Pitt">
+    </div>
+    <div class="circle">Brad Pitt</div>
+  </div>
+</body>
+</html>

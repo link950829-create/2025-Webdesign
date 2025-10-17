@@ -1,0 +1,244 @@
+body strong 
+{
+    color: red;
+    background-color: yellow;
+}
+
+body em
+{
+    color: blue;
+    background-color: lightgray;
+}
+
+body h1
+{
+    color: blue;
+}
+
+/* 
+a:link {
+color: rgb(251, 255, 38);
+background-color: transparent;
+text-decoration: none;
+}
+a:visited {
+color: pink;
+background-color: transparent;
+text-decoration: none;
+}
+a:hover {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+a:active {
+color: yellow;
+background-color: transparent;
+text-decoration: underline;
+}  */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2, p {
+  margin: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3dce49;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: rgb(248, 255, 57);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+
+ul li a.active {
+  background-color: #1e2925;
+}
+
+.Info {
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    height: 600px;
+    width: 30%;
+    background-color: aliceblue;
+    text-align: center;
+} 
+
+.Info img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.Contend {
+    position: absolute;
+    right: 0px;
+    top: 65px;
+    height: 400px;
+    width: 60%;
+    
+}
+
+
+
+
+/* 
+.container {
+  position: relative;
+  width: 50%;
+}
+ */
+
+/* .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60px;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #4156c0; 
+  border-radius: 50%;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+
+
+.text {
+  color: #9b5de0;
+  font-size: 20px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
+
+.Info.container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  border-radius: 50%;
+  background-color: #234b7d; /* 顏色背景 */
+  overflow: hidden;
+}
+
+/* 原始圖片設定 */
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* 覆蓋層 */
+.overlay {
+  position: absolute;
+  /* display: block; */
+  top: 0px;
+  left: 180px;
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+  background-color: rgba(0,0,0,0.2); /* 淡淡透明層 */
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* 第二張圖片 (hover 後顯示) */
+.overlay-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 70%;
+  display: block;
+}
+
+/* 文字框 */
+.text {
+  position: absolute;
+  bottom: 15%; /* 依照題目要求 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(35,75,125,0.5); /* 同背景色但半透明 */
+  color: white;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-align: center;
+} 
+
+/* 滑鼠移入時淡入覆蓋層 */
+.container:hover .overlay {
+  opacity: 1;
+}
+
+#img1 {
+  filter: sepia(1);
+}
+
+#img2 {
+  filter: blur(6px);
+}
+
+/* table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  position: absolute;
+  right: 10px;
+  width: 100%;
+} */
+
+td, th {
+  border: 1px solid #dddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.T4{
+    position: absolute;
+    right: 100px;
+    top: 300px;
+    height: 400px;
+    width: 60%;
+}
+
+.T5{
+    position: absolute;
+    right: 100px;
+    top: 900px;
+    height: 400px;
+    width: 60%;
+}
+
+.T5,.T5 tr,.T5 td,.T5 th {
+  border: 5px solid black;
+  text-align: center;
+}
