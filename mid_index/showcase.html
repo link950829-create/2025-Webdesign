@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Dream Space - Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="showcase.html" class="active">Showcase</a></li>
+        </ul>
+    </nav>
+
+    <!-- 標題 -->
+    <section class="showcase-header">
+        <h1>Interactive Showcase</h1>
+        <p>Experience dynamic web features with ocean-themed elements</p>
+    </section>
+
+    <!-- 表格樣式切換器 -->
+    <section class="table-styler-section">
+        <h2>Table Styler</h2>
+        <p class="section-desc">Customize the ocean data table below</p>
+        
+        <div class="controls">
+            <button onclick="changeFontSize('20px')">Small Font (20px)</button>
+            <button onclick="changeFontSize('30px')">Medium Font (30px)</button>
+            <button onclick="changeFontSize('50px')">Large Font (50px)</button>
+            <button onclick="changeBorder('1px')">Thin Border (1px)</button>
+            <button onclick="changeBorder('10px')">Medium Border (10px)</button>
+            <button onclick="changeBorder('20px')">Thick Border (20px)</button>
+            <button onclick="changeSpacing('5px')">Tight Spacing (5px)</button>
+            <button onclick="changeSpacing('15px')">Normal Spacing (15px)</button>
+            <button onclick="changeSpacing('25px')">Loose Spacing (25px)</button>
+            <button onclick="changeTableBg('#1E90FF')">Blue Background</button>
+            <button onclick="changeTableBg('#20B2AA')">Teal Background</button>
+            <button onclick="changeTableBg('#4682B4')">Steel Blue Background</button>
+            <button onclick="resetTable()">Reset to Original</button>
+        </div>
+
+        <table id="oceanTable">
+            <tr>
+                <th>Ocean Zone</th>
+                <th>Depth (m)</th>
+                <th>Temperature (°C)</th>
+            </tr>
+            <tr>
+                <td>Sunlight Zone</td>
+                <td>0-200</td>
+                <td>20-30</td>
+            </tr>
+            <tr>
+                <td>Twilight Zone</td>
+                <td>200-1000</td>
+                <td>4-20</td>
+            </tr>
+            <tr>
+                <td>Midnight Zone</td>
+                <td>1000-4000</td>
+                <td>2-4</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 拍立得圖片切換器 -->
+    <section class="polaroid-section">
+        <h2>Polaroid Image Switcher</h2>
+        <p class="section-desc">Browse through ocean memories</p>
+        
+        <div class="polaroid-frame">
+            <img id="polaroidImage" src="" alt="Ocean Photo">
+        </div>
+        
+        <div class="polaroid-controls">
+            <button onclick="previousImage()">← Previous</button>
+            <span id="imageCounter">Image 1 of 5</span>
+            <button onclick="nextImage()">Next →</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

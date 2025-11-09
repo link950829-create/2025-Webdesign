@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Dream Space - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 導覽列 -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+        </ul>
+    </nav>
+
+    <!-- 標題 -->
+    <section class="gallery-header">
+        <h1>Ocean Gallery</h1>
+        <p>Explore the beauty of marine life through images and interactive elements</p>
+    </section>
+
+    <!-- 懸停覆蓋效果區域 -->
+    <section class="hover-gallery">
+        <h2>Hover Gallery</h2>
+        <p class="section-desc">Hover over the images to reveal hidden details</p>
+        
+        <div class="hover-container">
+            <div class="image-wrapper">
+                <img src="https://t3.ftcdn.net/jpg/07/27/58/34/240_F_727583496_wExqNNS4Q8n5jKwWNesAGop9rPkbFvv4.jpg" 
+                     alt="Coral Reef" class="base-image">
+                <div class="overlay-effect">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Coral_Outcrop_Flynn_Reef.jpg/330px-Coral_Outcrop_Flynn_Reef.jpg" 
+                         alt="Coral Detail" class="overlay-image">
+                    <div class="text-box">Vibrant Coral Ecosystem</div>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img src="https://t3.ftcdn.net/jpg/07/27/58/34/240_F_727583496_wExqNNS4Q8n5jKwWNesAGop9rPkbFvv4.jpg" 
+                     alt="Deep Ocean" class="base-image">
+                <div class="overlay-effect">
+                    <img src="https://fishdb.sinica.edu.tw/files/muse_fishdb/styles/article_list/public/cover_pic/StockSnap_P3DQ36VF93_0.jpg?itok=7jpqCgWc" 
+                         alt="Ocean Depth" class="overlay-image">
+                    <div class="text-box">The Mysterious Abyss</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Map 區域 -->
+    <section class="imagemap-section">
+        <h2>Interactive Ocean Map</h2>
+        <p class="section-desc">Click on different parts of the ocean scene to explore</p>
+        
+        <div class="map-container">
+            <img src="https://as2.ftcdn.net/v2/jpg/16/75/42/85/1000_F_1675428533_Jg4AaJSn9kvO0XyUDib3lmfR0weNhjBn.jpg" 
+                 alt="Ocean Scene" 
+                 id="oceanMap"
+                 usemap="#oceanmap">
+            
+            <map name="oceanmap">
+                <!-- 正上方：天空/太陽 → 首頁 -->
+                <area shape="circle" 
+                      href="index.html" 
+                      alt="Sun - Home"
+                      data-original-coords="400,50,100">
+                
+                
+                <!-- 中間：鯨區 → 相簿 -->
+                <area shape="rect"  
+                      href="about.html" 
+                      alt="Seaweed - Gallery"
+                      data-original-coords="200,300,700,500">
+                
+                <!-- 左下角：珊瑚區 → 展示頁面 -->
+                <area shape="rect" 
+                      href="showcase.html" 
+                      alt="Coral - Showcase"
+                      data-original-coords="0,600,200,1000">
+                
+                <!-- 右下角: 珊瑚區 → 相簿 -->
+                <area shape="rect"  
+                      href="gallery.html" 
+                      alt="Coral - Gallery"
+                      data-original-coords="600,500,1000,1000">
+            </map>
+        </div>
+        
+        <div class="map-instructions">
+            <p><strong>Clickable Areas:</strong></p>
+            <ul>
+                <br>
+                <li>Sun (top) → Home</li>
+                <li>Whale (center) → About</li>
+                <li>Coral left (bottom-left) → Showcase</li>
+                <li>Coral right (bottom-right) → Gallery</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

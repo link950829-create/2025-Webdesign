@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋場景</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .canvas-container {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="oceanCanvas" width="800" height="500"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('oceanCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 繪製天空（漸層）
+        const skyGradient = ctx.createLinearGradient(0, 0, 0, 200);
+        skyGradient.addColorStop(0, '#87CEEB');
+        skyGradient.addColorStop(1, '#B0E0E6');
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, canvas.width, 200);
+
+        // 繪製太陽
+        ctx.fillStyle = '#FFD700';
+        ctx.beginPath();
+        ctx.arc(650, 80, 40, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 太陽光暈
+        ctx.fillStyle = 'rgba(255, 215, 0, 0.3)';
+        ctx.beginPath();
+        ctx.arc(650, 80, 60, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 繪製雲朵
+        function drawCloud(x, y) {
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.beginPath();
+            ctx.arc(x, y, 30, 0, Math.PI * 2);
+            ctx.arc(x + 25, y, 35, 0, Math.PI * 2);
+            ctx.arc(x + 50, y, 30, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        drawCloud(100, 60);
+        drawCloud(400, 100);
+
+        // 繪製海平面
+        ctx.strokeStyle = '#1E90FF';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(0, 200);
+        ctx.lineTo(canvas.width, 200);
+        ctx.stroke();
+
+        // 繪製海洋（漸層）
+        const oceanGradient = ctx.createLinearGradient(0, 200, 0, canvas.height);
+        oceanGradient.addColorStop(0, '#1E90FF');
+        oceanGradient.addColorStop(0.5, '#1873CC');
+        oceanGradient.addColorStop(1, '#104E8B');
+        ctx.fillStyle = oceanGradient;
+        ctx.fillRect(0, 200, canvas.width, canvas.height - 200);
+
+        // 繪製沙地
+        ctx.fillStyle = '#C2B280';
+        ctx.fillRect(0, 450, canvas.width, 50);
+
+        // 繪製海草
+        function drawSeaweed(x, baseY, height, color) {
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 4;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(x, baseY);
+            
+            for (let i = 0; i <= height; i += 15) {
+                const offset = Math.sin(i * 0.15) * 12;
+                ctx.lineTo(x + offset, baseY - i);
+            }
+            ctx.stroke();
+
+            // 繪製海草葉子
+            ctx.fillStyle = color;
+            for (let i = 20; i < height; i += 35) {
+                const offset = Math.sin(i * 0.15) * 12;
+                ctx.beginPath();
+                ctx.ellipse(x + offset, baseY - i, 10, 18, Math.PI / 4, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // 繪製多株海草
+        drawSeaweed(120, 450, 140, '#2E8B57');
+        drawSeaweed(180, 450, 110, '#3CB371');
+        drawSeaweed(280, 450, 160, '#2E8B57');
+        drawSeaweed(550, 450, 130, '#3CB371');
+        drawSeaweed(620, 450, 150, '#2E8B57');
+        drawSeaweed(700, 450, 120, '#3CB371');
+
+        // 繪製氣泡
+        function drawBubble(x, y, radius) {
+            // 氣泡主體
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 氣泡高光
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.beginPath();
+            ctx.arc(x - radius/3, y - radius/3, radius/3, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 氣泡邊框
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        // 繪製多個氣泡
+        drawBubble(150, 380, 8);
+        drawBubble(160, 350, 6);
+        drawBubble(145, 320, 7);
+        
+        drawBubble(250, 400, 9);
+        drawBubble(265, 370, 5);
+        drawBubble(255, 340, 7);
+        drawBubble(245, 310, 6);
+
+        drawBubble(350, 420, 7);
+        drawBubble(360, 390, 8);
+        drawBubble(355, 360, 6);
+
+        drawBubble(580, 410, 8);
+        drawBubble(590, 380, 6);
+        drawBubble(585, 350, 7);
+        drawBubble(575, 320, 5);
+
+        drawBubble(650, 400, 9);
+        drawBubble(665, 370, 7);
+        drawBubble(655, 340, 6);
+
+        drawBubble(450, 430, 7);
+        drawBubble(460, 400, 5);
+        drawBubble(455, 370, 6);
+    </script>
+</body>
+</html>
